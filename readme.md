@@ -1,37 +1,44 @@
 <div align='center'>
 
-![npm](https://badgen.net/npm/v/my-prime)
-![install size](https://badgen.net/packagephobia/install/my-prime)
-![stars](https://badgen.net/github/stars/jinnatul/my-prime)
-![npm](https://img.shields.io/npm/dw/my-prime)
-![total downloads](https://badgen.net/npm/dt/my-prime)
+![npm](https://badgen.net/npm/v/academic-email)
+![install size](https://badgen.net/packagephobia/install/academic-email)
+![stars](https://badgen.net/github/stars/jinnatul/academic-email)
+![npm](https://img.shields.io/npm/dw/academic-email)
+![total downloads](https://badgen.net/npm/dt/academic-email)
 
 </div>
 
-## My-Prime
-Finds prime numbers using the Sieve of Eratosthenes algorithm.
+## Academic Email Verifier
+Identifies email addresses or domains names that belong to colleges or universities. Retrieves institution name or institution country.
 
 ```js
-$ npm i my-prime
+$ npm i academic-email
 ```
 
 ### Usage
 ```js
 // es5
-var pr = require('my-prime');
+const academicEmail = require('academic-email');
 
 // es6
-import pr from 'my-prime';
+import { isAcademic, getInstitutionName, getInstitutionCountry } from 'academic-email';
 
-pr.isPrime(3);
-// => true;
+isAcademic('zinnatul35-1957@diu.edu.bd');
+// => true
 
-pr.isPrime(4);
-// => false;
+isAcademic('morol@diu.edu');
+// => false
 
-pr.isPrime(11);
-// => true;
+getInstitutionName('zinnatul35-1957@diu.edu.bd');
+// => 'Daffodil International University'
 
-pr.isPrime(3079);
-// => true;
+getInstitutionName('morol@diu.edu');
+// => 'Invalid email!'
+
+getInstitutionCountry('zinnatul35-1957@diu.edu.bd');
+// => 'Bangladesh'
+
+getInstitutionCountry('morol@diu.edu');
+// => 'Invalid email!'
+
 ```
